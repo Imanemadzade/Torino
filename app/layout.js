@@ -1,6 +1,7 @@
 import "./globals.css";
 
 import Header from "@/template/Header";
+import TanstacQueryProvider from "components/partials/providers/TanstacQueryProvider";
 import localFont from "next/font/local";
 
 const yekanFont = localFont({
@@ -17,7 +18,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="fa" dir="rtl" className={yekanFont.className}>
       <body>
-        <Header />
+        <TanstacQueryProvider>
+          <Header />
+        </TanstacQueryProvider>
         {children}
       </body>
     </html>
