@@ -1,14 +1,19 @@
 "use client";
 import { useState } from "react";
 import AuthForm from "@/template/AuthForm";
+import { useGetUserData } from "@/service/queries";
+import UserAccountMenu from "./HeaderLeftMenus/UserAccountMenu";
 
 function HeaderLeftMenu() {
   const [isOpenModal, setIsOpenModal] = useState(false);
+
+  const { data } = useGetUserData();
+  if (data?.data) return <UserAccountMenu data={data} />;
   return (
     <div className="select-none">
       <span
         className="cursor-pointer md:hidden"
-        onClick={() => setIsOpenModal(!isOpenModal)}
+        onClick={() => setIsOpenModal(true)}
       >
         <img src="/svg/sign-in.svg" alt="sign in picture" />
       </span>
@@ -16,7 +21,7 @@ function HeaderLeftMenu() {
         <div className="flex flex-row-reverse ">
           <div
             className="hover:text-green-400"
-            onClick={() => setIsOpenModal(!isOpenModal)}
+            onClick={() => setIsOpenModal(true)}
           >
             ورود
           </div>
@@ -24,7 +29,7 @@ function HeaderLeftMenu() {
         </div>
         <div className="cursor-auto">|</div>
         <div
-          onClick={() => setIsOpenModal(!isOpenModal)}
+          onClick={() => setIsOpenModal(true)}
           className="hover:text-green-400"
         >
           ثبت نام

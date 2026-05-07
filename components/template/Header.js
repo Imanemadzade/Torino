@@ -1,7 +1,5 @@
-
-
-import HeaderLeftMenu from "@/module/header/HeaderLeftMenu";
-import HeaderRightMenu from "../module/header/HeaderRightMenu";
+import HeaderLeftMenu from "@/module/Header/HeaderLeftMenu";
+import HeaderRightMenu from "../module/Header/HeaderRightMenu";
 
 function Header() {
   return (
