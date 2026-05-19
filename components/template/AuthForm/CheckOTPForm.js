@@ -4,8 +4,7 @@ import { useState } from "react";
 import OTPInput from "react-otp-input";
 import { ErrorMessage } from "formik";
 import { e2p } from "core/utils/replaceNumber";
-import { useCheckOTP } from "@/service/mutations";
-
+import { useCheckOTP } from "service/mutations";
 
 function CheckOTPForm({ mobile, setIsOpenModal, setStep }) {
   const [otp, setOtp] = useState("");

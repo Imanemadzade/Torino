@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import AuthForm from "@/template/AuthForm";
-import { useGetUserData } from "@/service/queries";
+import { useGetUserData } from "service/queries";
 import UserAccountMenu from "./HeaderLeftMenus/UserAccountMenu";
 
 function HeaderLeftMenu() {

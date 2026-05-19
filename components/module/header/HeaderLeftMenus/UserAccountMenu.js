@@ -1,4 +1,4 @@
-import { getCookie, setCookie } from "core/utils/cookie";
+// import { getCookie, setCookie } from "core/utils/cookie";
 import { e2p } from "core/utils/replaceNumber";
 import Link from "next/link";
 import { useState } from "react";

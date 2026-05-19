@@ -1,6 +1,6 @@
 // "use client";
 
-import { useSendOTP } from "@/service/mutations";
+import { useSendOTP } from "service/mutations";
 import { sendOTPSchema } from "core/schema/sendOTPSchema";
 import { e2p } from "core/utils/replaceNumber";
 import { Field, Form, Formik, ErrorMessage } from "formik";

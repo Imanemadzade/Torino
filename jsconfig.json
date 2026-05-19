@@ -6,7 +6,7 @@
       "@/app/*": ["app/*"],
       "@/template/*": ["components/template/*"],
       "@/module/*": ["components/module/*"],
-      "@/api/*": ["core/config/api/*"],
+      "@/config/*": ["core/config/*"],
       "@/service/*": ["service/*"]
     }
   }

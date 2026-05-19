@@ -1,5 +1,5 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import api from "core/config/api";
+import api from "@/config/api";
 import { setCookie } from "core/utils/cookie";
 
 const useSendOTP = () => {

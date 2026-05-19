@@ -1,8 +1,9 @@
 import { useQuery } from "@tanstack/react-query";
-import api from "core/config/api";
+import api from "@/config/api";
 
 export const useGetUserData = () => {
   const queryFn = () => api.get("/user/profile");
   const queryKey = ["user-data"];
-  return useQuery({ queryFn, queryKey });
+
+  return useQuery({ queryKey, queryFn });
 };

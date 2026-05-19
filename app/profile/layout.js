@@ -1,28 +1,21 @@
-import AuthProvider from "components/partials/providers/AuthProvider";
-import ReactQueryProvider from "components/partials/providers/ReactQueryProvider";
+"use client";
 
-import Link from "next/link";
+import SideBar from "@/template/Profile/SideBar";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import AuthProvider from "components/partials/providers/AuthProvider";
+
+const queryClient = new QueryClient();
 
 function ProfileLayout({ children }) {
   return (
-    <ReactQueryProvider>
+    <QueryClientProvider client={queryClient}>
       <AuthProvider>
-        <div className="flex gap-9 p-13 ">
-          <ul className="border border-solid rounded-md p-4">
-            <li>
-              <Link href="/profile">پروفایل من</Link>
-            </li>
-            <li>
-              <Link href="/profile/my-tours">تورهای من</Link>
-            </li>
-            <li>
-              <Link href="/profile/transactions">تراکنش ها</Link>
-            </li>
-          </ul>
+        <div className=" flex flex-col md:flex-row px-2.5">
+          <SideBar />
           <div>{children}</div>
         </div>
       </AuthProvider>
-    </ReactQueryProvider>
+    </QueryClientProvider>
   );
 }
 
