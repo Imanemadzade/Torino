@@ -6,7 +6,7 @@ import localFont from "next/font/local";
 
 const yekanFont = localFont({
   src: "../public/fonts/Yekan.woff2",
-  display: "swapp",
+  display: "swap",
 });
 
 export const metadata = {

@@ -7,7 +7,9 @@
       "@/template/*": ["components/template/*"],
       "@/module/*": ["components/module/*"],
       "@/config/*": ["core/config/*"],
-      "@/service/*": ["service/*"]
+      "@/service/*": ["service/*"],
+      "@/constans/*": ["constants/*"],
+      "@/icons/*": ["components/icons/*"]
     }
   }
 }

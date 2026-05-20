@@ -10,7 +10,7 @@ function ProfileLayout({ children }) {
   return (
     <QueryClientProvider client={queryClient}>
       <AuthProvider>
-        <div className=" flex flex-col md:flex-row px-2.5">
+        <div className="container m-auto flex flex-col md:flex-row px-2.5 md:px-18.75">
           <SideBar />
           <div>{children}</div>
         </div>
