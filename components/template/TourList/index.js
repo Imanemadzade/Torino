@@ -21,10 +21,10 @@ function TourList({ toursData }) {
             تور های داخلی و خارجی{" "}
           </h1>
         </div>
-        <div>
-          <h2>همه تورها</h2>
+          <h2 className="mb-2 text-[20px] font-normal">همه تورها</h2>
+        <div className=" grid grid-cols-1 justify-center  md:grid-cols-2 lg:grid-cols-3   " >
           {toursData?.map((tour) => (
-            <ToursCard key={tour.id} {...tour} />
+            <ToursCard key={tour.id} {...tour}  />
           ))}
         </div>
       </div>
