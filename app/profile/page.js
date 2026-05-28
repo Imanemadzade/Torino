@@ -1,5 +1,7 @@
+import UserProfilePage from "@/template/Profile";
+
 function ProfilePage() {
-  return <div>ProfilePage</div>;
+  return <UserProfilePage />;
 }
 
 export default ProfilePage;

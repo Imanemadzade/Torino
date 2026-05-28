@@ -6,7 +6,7 @@ function HeaderRightMenu() {
     <div>
       <div className="lg:hidden">
         <span className="w-7.5">
-          <img src="svg/hamburger-menu.svg" alt="hamburger picture" />
+          <img src="svg/hamburger-menu.svg"  alt="hamburger picture" />
         </span>
       </div>
       <div className="flex items-center space-between gap-7.5 max-lg:hidden">
