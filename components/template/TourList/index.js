@@ -1,10 +1,9 @@
 import Image from "next/image";
-import Link from "next/link";
+
 import ToursCard from "./ToursCard";
 
 function TourList({ toursData }) {
   if (!toursData) return <p>توری وجود ندارد .</p>;
-
   return (
     <main>
       <Image
@@ -14,17 +13,17 @@ function TourList({ toursData }) {
         alt="Torino Banner"
         className="w-full h-29.75 mb-6 md:h-40 lg:h-87.5  lg:mb-4.25"
       />
-      <div className="container  m-auto  px-2.5  md:px-18.75">
-        <div className="flex">
-          <h1 className=" text-[16px] text-[#595959] font-semibold m-auto  lg:text-[28px]  ">
-            <span className="text-[#28A745]">تورینو</span> برگزار کننده بهترین
-            تور های داخلی و خارجی{" "}
-          </h1>
-        </div>
-          <h2 className="mb-2 text-[20px] font-normal">همه تورها</h2>
-        <div className=" grid grid-cols-1 justify-center  md:grid-cols-2 lg:grid-cols-3   " >
+      <div className="flex">
+        <h1 className=" text-[16px] text-[#595959] font-semibold m-auto  lg:text-[28px]  ">
+          <span className="text-[#28A745]">تورینو</span> برگزار کننده بهترین تور
+          های داخلی و خارجی{" "}
+        </h1>
+      </div>
+      <div className="container m-auto px-[31.5px]    md:px-18.75 lg:px-31.5">
+        <h2 className="mb-2 text-[20px] font-normal">همه تورها</h2>
+        <div className="grid grid-cols-1  justify-between  sm:grid-cols-2 sm:gap-8.75 lg:grid-cols-3 xl:grid-cols-4  ">
           {toursData?.map((tour) => (
-            <ToursCard key={tour.id} {...tour}  />
+            <ToursCard key={tour?.id} {...tour} />
           ))}
         </div>
       </div>

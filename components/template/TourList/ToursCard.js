@@ -6,7 +6,7 @@ import { vehicleToFa } from "core/utils/VehicleToFaFn";
 import Link from "next/link";
 
 async function ToursCard({
-  name,
+  id,
   image,
   price,
   title,
@@ -14,33 +14,39 @@ async function ToursCard({
   endDate,
   fleetVehicle,
   options,
+  origin: { name },
 }) {
   return (
-    <section className="w-[327.44px] h-69.25 mb-8.75  rounded-[10px]  shadow-[0_0_2px_#00000025] md:w-[278.44px] ">
+    <section className="w-full  mb-8.75  rounded-[10px]  shadow-[0_0_2px_#00000025] flex flex-col  ">
       <Image
         src={image}
         width={1000}
         height={1000}
         alt={`${name} picture`}
-        className="w-97.5 h-39.75 md:h-39.75 mb-2 "
+        className="w-full aspect-ratio-4/3 object-cover mb-2  "
       />
       <div>
         <h3 className="mb-1.5 mr-2.5 text-[22px] font-normal ">{title}</h3>
-        <p className="mb-1.5 mr-2.5 text-[#282828B2] text-[15px] font-normal ">
+        <p className="mb-1.5 mr-2.5 text-[#282828B2] text-[13px] font-normal ">
           مهرماه .{tourDays(startDate, endDate)} روزه -{" "}
           {vehicleToFa(fleetVehicle)} -{options[1]}...
         </p>
-        <div className="h-px bg-[#D9D9D9]"></div>
       </div>
-      <div className="mx-1.5 h-10.25 flex justify-between items-center">
+
+      <div className="text-[#282828B2]  border-t border-t-[#D9D9D9] mt-auto mx-1.5 h-10.25  flex justify-between items-center">
         <Link
-          href="#"
-          className="inline-flex items-center justify-center w-24.75 h-7.25 bg-[#28A745] text-white rounded-sm text-[15px] font-normal"
+          href={`/tours/${id}`}
+          className=" flex items-center  justify-center w-24.75 h-7.25 bg-[#28A745] text-white rounded-sm text-[15px] font-normal md:w-16 "
         >
           رزرو
         </Link>
         <div>
-          <span>{spNum(+price)}</span>
+          <span
+            className="ml-1.5
+          text-[#009ECA] "
+          >
+            {spNum(+price)}
+          </span>
           تومان
         </div>
       </div>
