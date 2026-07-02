@@ -36,7 +36,7 @@ async function ToursCard({
       <div className="text-[#282828B2]  border-t border-t-[#D9D9D9] mt-auto mx-1.5 h-10.25  flex justify-between items-center">
         <Link
           href={`/tours/${id}`}
-          className=" flex items-center  justify-center w-24.75 h-7.25 bg-[#28A745] text-white rounded-sm text-[15px] font-normal md:w-16 "
+          className=" flex items-center  justify-center w-24.75 h-7.25 bg-[#28A745] text-white rounded-sm text-[15px] font-normal sm:w-16 "
         >
           رزرو
         </Link>
