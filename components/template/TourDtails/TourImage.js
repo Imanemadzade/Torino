@@ -1,14 +1,14 @@
 import Image from "next/image";
 
-function TourImage({ image, name }) {
+function TourImage({ image, name, className }) {
   return (
-    <div >
+    <div className={`${className} mb-4`}>
       <Image
         src={image}
-        width={1000}
-        height={1000}
+        width={1200}
+        height={900}
         alt={`${name} picture`}
-        className="  aspect-ratio-4/3 object-cover mb-4  rounded-xl "
+        className=" aspect-ratio-4/3 object-cover   rounded-xl  "
       />
     </div>
   );

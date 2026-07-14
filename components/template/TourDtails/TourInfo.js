@@ -7,63 +7,70 @@ import SecurityIcon from "@/icons/TourDetails/SecurityIcon";
 import { cityToFa } from "core/utils/cityToFa";
 import { e2p } from "core/utils/replaceNumber";
 import { vehicleToFa } from "core/utils/VehicleToFaFn";
+import { toJalaliDate } from "core/utils/DateFn";
 
 function TourInfo({
+  className,
   origin,
   fleetVehicle,
-  availableSeats,
   insurance,
+  capacity,
   startDate,
   endDate,
 }) {
-  const TOUR_INFO_DATA = [
+  const jalaaliStartDate = e2p(toJalaliDate(startDate));
+  const jalaaliEndDate = e2p(toJalaliDate(endDate));
+
+  const tourInfoItems= [
     {
-      id: "1",
+      id: 1,
       icon: Routing2Icon,
       title: "مبدا",
       text: cityToFa(origin),
     },
     {
-      id: "2",
+      id: 2,
       icon: CalenderIcon,
       title: "تاریخ رفت",
-      text: "تهران",
+      text: jalaaliStartDate,
     },
     {
-      id: "3",
+      id: 3,
       icon: Calender2Icon,
       title: "تاریخ برگشت",
-      text: "تهران",
+      text: jalaaliEndDate,
     },
     {
-      id: "4",
+      id: 4,
       icon: BusIcon,
       title: "حمل و نقل",
       text: vehicleToFa(fleetVehicle),
     },
     {
-      id: "5",
+      id: 5,
       icon: Profile2UsersIcon,
       title: "ظرفیت",
-      text: e2p(availableSeats),
+      text: `حداکثر ${e2p(capacity)} `,
     },
     {
-      id: "6",
+      id: 6,
       icon: SecurityIcon,
       title: "بیمه",
-      text: "تهران",
+      text: insurance ? "دارد" : "ندارد",
     },
   ];
 
   return (
-    <div className="grid grid-cols-3 justify-items-start gap-x-2 gap-y-6 text-[14px]">
-      {TOUR_INFO_DATA.map((item) => (
-        <div key={item.id} className="text-right">
-          <div className="flex  items-center  gap-2   ">
+    <div
+      className={`${className} grid grid-cols-3  justify-items-start gap-x-2  gap-y-6 text-[14px]  md:flex md:justify-between md:divide-x md:py-7.5`}
+    >
+      {tourInfoItems.map((item) => (
+        <div className="md:pl-4 lg:pl-8" key={item.id}>
+          <div className="flex  items-center  gap-2 ">
             <item.icon className="size-4 " />
             <p className=" text-[#444444]">{item.title}</p>
           </div>
-          <p className="text-center text-[#282828] text-[12px] ">{item.text}</p>
+          <p className="pr-2  text-[#282828] text-[12px]">{item.text}</p>
         </div>
       ))}
     </div>
