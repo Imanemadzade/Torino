@@ -1,6 +1,7 @@
 import "./globals.css";
 
 import Header from "@/template/Header";
+import Footer from "@/template/Footer"
 import TanstacQueryProvider from "components/partials/providers/TanstacQueryProvider";
 import localFont from "next/font/local";
 
@@ -22,6 +23,7 @@ export default function RootLayout({ children }) {
           <Header />
         </TanstacQueryProvider>
         {children}
+        <Footer />
       </body>
     </html>
   );
